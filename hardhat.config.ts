@@ -2,6 +2,7 @@ import 'hardhat-typechain'
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-waffle'
 import '@nomiclabs/hardhat-etherscan'
+import 'dotenv/config';
 
 export default {
   networks: {
@@ -44,6 +45,10 @@ export default {
     bnb: {
       url: `https://bsc-dataseed.binance.org/`,
     },
+    mintTest: {
+      url: `https://testnet-rpc.mintchain.io`,
+      accounts: [process.env.PRIVATE_KEY_DEPLOYER]
+    }
   },
   etherscan: {
     // Your API key for Etherscan
