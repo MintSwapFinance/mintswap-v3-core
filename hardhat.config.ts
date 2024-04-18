@@ -46,7 +46,7 @@ export default {
       url: `https://bsc-dataseed.binance.org/`,
     },
     mintTest: {
-      url: `https://testnet-rpc.mintchain.io`,
+      url: `https://sepolia-testnet-rpc.mintchain.io`,
       accounts: [process.env.PRIVATE_KEY_DEPLOYER]
     }
   },
