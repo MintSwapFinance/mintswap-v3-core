@@ -48,12 +48,28 @@ export default {
     mintTest: {
       url: `https://sepolia-testnet-rpc.mintchain.io`,
       accounts: [process.env.PRIVATE_KEY_DEPLOYER]
+    },
+    mint: {
+      url: `https://rpc.mintchain.io`,
+      accounts: [process.env.PRIVATE_KEY_DEPLOYER]
     }
   },
   etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: {
+      mint: "123",
+    },
+    customChains: [
+      {
+        network: "mint",
+        chainId: 185,
+        urls: {
+          apiURL: "https://explorer.mintchain.io/api",
+          browserURL: "https://explorer.mintchain.io/",
+        },
+      },
+    ],
   },
   solidity: {
     version: '0.7.6',
